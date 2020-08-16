@@ -28,7 +28,7 @@ body {
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div style={{ backgroundColor: "#f7fafc" }}>
       <GlobalStyle />
       <MainRoot>{children}</MainRoot>
     </div>

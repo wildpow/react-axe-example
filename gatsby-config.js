@@ -15,6 +15,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -30,7 +31,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-react-axe",
       options: {
-        debounce: 1000,
+        debounce: 3000,
         showInProduction: false,
       },
     },

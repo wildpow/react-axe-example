@@ -1,8 +1,8 @@
-import React from "react";
-import { NodeGroup } from "react-move";
-import styled from "styled-components";
-import Img from "gatsby-image";
-import PropTypes from "prop-types";
+import React from "react"
+import { NodeGroup } from "react-move"
+import styled from "styled-components"
+import Img from "gatsby-image"
+import PropTypes from "prop-types"
 
 const Holder = styled.div`
   position: relative;
@@ -24,7 +24,7 @@ const Holder = styled.div`
     margin-bottom: 50px;
     margin-top: 0px;
   }
-`;
+`
 
 const TabContent = styled.div`
   width: 50%;
@@ -39,7 +39,7 @@ const TabContent = styled.div`
     padding-left: 10px;
   }
   h4 {
-    font-family: ${(props) => props.theme.MainFont3};
+    font-family: ${props => props.theme.MainFont3};
     font-size: 1.6rem;
     font-weight: 400;
     margin-bottom: 10px;
@@ -47,7 +47,7 @@ const TabContent = styled.div`
   }
   p {
     margin-top: 0;
-    font-family: ${(props) => props.theme.MainFont1};
+    font-family: ${props => props.theme.MainFont1};
     font-weight: 300;
     line-height: 1.9rem;
     font-size: 1.2rem;
@@ -59,7 +59,7 @@ const TabContent = styled.div`
   }
   ul {
     line-height: 1.6rem;
-    font-family: ${(props) => props.theme.MainFont1};
+    font-family: ${props => props.theme.MainFont1};
     font-weight: 400;
     list-style: none;
     padding-left: 0;
@@ -84,14 +84,14 @@ const TabContent = styled.div`
       left: 0;
     }
   }
-`;
+`
 
 const TabImg = styled(Img)`
   width: 50%;
   @media screen and (max-width: 992px) {
     width: 100%;
   }
-`;
+`
 
 const TabContainer = styled.div`
   display: flex;
@@ -101,13 +101,13 @@ const TabContainer = styled.div`
     flex-direction: column;
     align-items: center;
   }
-`;
+`
 
 const AnimatedBox = ({ tabs, current }) => {
   return (
     <NodeGroup
       data={[current]}
-      keyAccessor={(d) => d}
+      keyAccessor={d => d}
       start={() => ({
         opacity: 0,
       })}
@@ -124,7 +124,7 @@ const AnimatedBox = ({ tabs, current }) => {
         timing: { duration: 300 },
       })}
     >
-      {(nodes) => (
+      {nodes => (
         <Holder>
           {nodes.map(({ key, data, state: { opacity } }) => (
             <TabContainer style={{ position: "absolute", opacity }} key={key}>
@@ -134,27 +134,22 @@ const AnimatedBox = ({ tabs, current }) => {
               />
               <TabContent>
                 <h4>{tabs[data].title.toUpperCase()}</h4>
-                <div
-                  // eslint-disable-next-line react/no-danger
-                  dangerouslySetInnerHTML={{
-                    __html: tabs[data].description,
-                  }}
-                />
+                <p>{tabs[data].description}</p>
               </TabContent>
             </TabContainer>
           ))}
         </Holder>
       )}
     </NodeGroup>
-  );
-};
+  )
+}
 
 AnimatedBox.propTypes = {
   current: PropTypes.number,
   tabs: PropTypes.instanceOf(Array).isRequired,
-};
+}
 
 AnimatedBox.defaultProps = {
   current: 0,
-};
-export default AnimatedBox;
+}
+export default AnimatedBox
