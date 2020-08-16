@@ -1,12 +1,12 @@
-import React from "react";
-import Img from "gatsby-image";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import React from "react"
+import Img from "gatsby-image"
+import PropTypes from "prop-types"
+import styled from "styled-components"
 // import { HelmetDatoCms } from "gatsby-source-datocms";
-import TabBox from "./TabBox";
-import HeaderButtons from "./HeaderButtons";
+import TabBox from "./TabBox"
+import HeaderButtons from "./HeaderButtons"
 
-const Para = styled.p`
+export const Para = styled.p`
   margin-right: auto;
   margin-left: auto;
   margin-top: 0px;
@@ -17,12 +17,12 @@ const Para = styled.p`
   font-size: 18px;
   line-height: 1.6rem;
   text-align: center;
-  font-family: ${(props) => props.theme.MainFont3};
+  font-family: ${props => props.theme.MainFont3};
   @media screen and (max-width: 375px) {
     font-size: 16px;
     /* margin-top: 36px; */
   }
-`;
+`
 const Header = styled.div`
   padding-top: 2em;
   margin-bottom: 2em;
@@ -34,7 +34,7 @@ const Header = styled.div`
     margin-right: 30px;
     margin-left: 30px;
   }
-`;
+`
 
 const Container = styled.section`
   /* padding-right: 15px;
@@ -51,7 +51,7 @@ const Container = styled.section`
   @media (min-width: 1200px) {
     width: 1170px;
   }
-`;
+`
 
 const Hero = styled(Img)`
   width: 100%;
@@ -63,16 +63,16 @@ const Hero = styled(Img)`
     /* width: 100vw; */
     margin-left: 0px;
   }
-`;
-const LandingRoot = styled.article``;
+`
+const LandingRoot = styled.article``
 const Hr = styled.hr`
   border-top: 1px solid #eee;
   border-bottom: 2px solid #7ea9c8;
   margin-bottom: 3em;
   display: block;
-`;
+`
 const Landing = ({ data, buttonName, buttonURL }) => {
-  const { headingImg, heroImg, description, tabBox, seoLink } = data;
+  const { headingImg, heroImg, description, tabBox, seoLink } = data
   return (
     <LandingRoot style={{ maxWidth: "1440px", backgroundColor: "white" }}>
       {/* <HelmetDatoCms seo={seoLink.seoMetaTags} /> */}
@@ -87,7 +87,7 @@ const Landing = ({ data, buttonName, buttonURL }) => {
       >
         <Para style={{ marginBottom: "10px" }}>{description}</Para>
         <HeaderButtons buttonName={buttonName} buttonURL={buttonURL} />
-        {tabBox.map((item) => (
+        {tabBox.map(item => (
           <div key={item.id}>
             <Hr />
             <TabBox
@@ -104,18 +104,18 @@ const Landing = ({ data, buttonName, buttonURL }) => {
         </div>
       </Container>
     </LandingRoot>
-  );
-};
+  )
+}
 
 Landing.propTypes = {
   data: PropTypes.instanceOf(Object).isRequired,
   buttonName: PropTypes.string,
   buttonURL: PropTypes.string,
-};
+}
 
 Landing.defaultProps = {
   buttonName: undefined,
   buttonURL: undefined,
-};
+}
 
-export default Landing;
+export default Landing

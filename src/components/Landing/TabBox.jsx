@@ -1,24 +1,24 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import Img from "gatsby-image";
-import { useWindowSize } from "../../context/WindowSizeContext";
-import Tab from "./Tab";
-import arrowDown from "../../images/whitedownArrow.png";
-import AnimatedBox from "./AnimatedBox";
-import { P } from "./Landing.styled";
-import { InBoundLink } from "./HeaderButtons";
+import React, { useState } from "react"
+import styled from "styled-components"
+import PropTypes from "prop-types"
+import Img from "gatsby-image"
+import { useWindowSize } from "./CustomHooks/WindowSizeContext"
+import Tab from "./Tab"
+import arrowDown from "../../images/whitedownArrow.png"
+import AnimatedBox from "./AnimatedBox"
+import { Para } from "./Landing"
+// import { InBoundLink } from "./HeaderButtons"
 
 const TabHeroImg = styled(Img)`
   /* max-width: 100%;
   height: auto;
   vertical-align: middle; */
-  max-width: ${(props) => props.width}px;
-  /* width: ${(props) => props.width}px; */
+  max-width: ${props => props.width}px;
+  /* width: ${props => props.width}px; */
   margin: 0 auto;
   text-align: center;
   margin-bottom: 10px;
-`;
+`
 
 const Select = styled.select`
   font-weight: 500;
@@ -28,7 +28,7 @@ const Select = styled.select`
   width: 100%;
   margin-bottom: 1em;
   font-size: 18px;
-  font-family: ${(props) => props.theme.MainFont1};
+  font-family: ${props => props.theme.MainFont1};
   background-image: url(${arrowDown});
   background-size: 17px;
   border-width: 0px;
@@ -42,7 +42,7 @@ const Select = styled.select`
   cursor: pointer;
   border-radius: 0 0;
   appearance: none;
-`;
+`
 const Holder = styled.div`
   @media screen and (max-width: 981px) {
     height: 90vh;
@@ -64,13 +64,13 @@ const Holder = styled.div`
     flex-direction: column;
     align-items: center;
   }
-`;
+`
 const TabBox = ({ tabs, hero, heroText, topButtonName, topButtonUrl }) => {
-  const [current, setCurrent] = useState(0);
-  const { width } = useWindowSize();
-  const hasTopButton = !!(
-    topButtonName.length !== 0 || topButtonUrl.length !== 0
-  );
+  const [current, setCurrent] = useState(0)
+  const { width } = useWindowSize()
+  // const hasTopButton = !!(
+  //   topButtonName.length !== 0 || topButtonUrl.length !== 0
+  // )
   return (
     <Holder>
       <header>
@@ -81,7 +81,7 @@ const TabBox = ({ tabs, hero, heroText, topButtonName, topButtonUrl }) => {
           width={hero.width}
         />
         <article>
-          {hasTopButton ? (
+          {/* {hasTopButton ? (
             <InBoundLink
               style={{
                 width: "250px",
@@ -92,8 +92,8 @@ const TabBox = ({ tabs, hero, heroText, topButtonName, topButtonUrl }) => {
             >
               {topButtonName}
             </InBoundLink>
-          ) : null}
-          <P>{heroText}</P>
+          ) : null} */}
+          <Para>{heroText}</Para>
         </article>
         <div style={{ display: "flex", justifyContent: "center" }}>
           {width > 770 ? (
@@ -108,11 +108,11 @@ const TabBox = ({ tabs, hero, heroText, topButtonName, topButtonUrl }) => {
                   >
                     {data.title}
                   </Tab>
-                );
+                )
               })}
             </>
           ) : (
-            <Select onChange={(e) => setCurrent(e.target.value)}>
+            <Select onChange={e => setCurrent(e.target.value)}>
               {tabs.map((data, i) => (
                 <option value={i} key={data.title}>
                   {data.title}
@@ -124,13 +124,13 @@ const TabBox = ({ tabs, hero, heroText, topButtonName, topButtonUrl }) => {
       </header>
       <AnimatedBox current={current} tabs={tabs} />
     </Holder>
-  );
-};
+  )
+}
 
 TabBox.defaultProps = {
   topButtonUrl: null,
   topButtonName: null,
-};
+}
 
 TabBox.propTypes = {
   heroText: PropTypes.string.isRequired,
@@ -143,6 +143,6 @@ TabBox.propTypes = {
   tabs: PropTypes.instanceOf(Array).isRequired,
   topButtonUrl: PropTypes.string,
   topButtonName: PropTypes.string,
-};
+}
 
-export default TabBox;
+export default TabBox

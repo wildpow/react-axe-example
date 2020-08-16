@@ -1,8 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 import styledNormalize from "styled-normalize"
 
+const MainRoot = styled.main`
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+`
 const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
   html {
@@ -25,12 +30,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <GlobalStyle />
-      <h1>hello</h1>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <MainRoot>{children}</MainRoot>
     </div>
   )
 }
