@@ -19,7 +19,9 @@
     "react-helmet": "^6.1.0",
     "react-move": "^6.4.0",
     "styled-components": "^5.1.1",
-    "styled-normalize": "^8.0.7"
+    "styled-normalize": "^8.0.7",
+    "typeface-roboto": "0.0.75",
+    "typeface-roboto-slab": "^1.1.4"
   },
   "devDependencies": {
     "prettier": "2.0.5"

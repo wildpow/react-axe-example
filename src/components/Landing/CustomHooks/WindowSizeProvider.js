@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import WindowSizeCtx from "../context/WindowSizeContext";
+import WindowSizeCtx from "./WindowSizeContext";
 
 const WindowSizeProvider = ({ children }) => {
   const resizeInProgress = useRef(false);

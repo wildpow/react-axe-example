@@ -1,7 +1,15 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import React from "react"
+import { ThemeProvider } from "styled-components"
+import WindowSizeProvider from "./src/components/Landing/CustomHooks/WindowSizeProvider"
+import theme from "./src/theme"
 
-// You can delete this file if you're not using it
+require("typeface-roboto-slab")
+require("typeface-roboto")
+
+export const wrapRootElement = ({ element }) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <WindowSizeProvider>{element}</WindowSizeProvider>
+    </ThemeProvider>
+  )
+}
