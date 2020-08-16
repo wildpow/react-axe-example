@@ -5,6 +5,7 @@ import styled from "styled-components"
 // import { HelmetDatoCms } from "gatsby-source-datocms";
 import TabBox from "./TabBox"
 import HeaderButtons from "./HeaderButtons"
+import { FadeIn } from "../../theme"
 
 export const Para = styled.p`
   margin-right: auto;
@@ -64,7 +65,10 @@ const Hero = styled(Img)`
     margin-left: 0px;
   }
 `
-const LandingRoot = styled.article``
+const LandingRoot = styled.article`
+  animation-name: ${FadeIn};
+  ${props => props.theme.Animation}
+`
 const Hr = styled.hr`
   border-top: 1px solid #eee;
   border-bottom: 2px solid #7ea9c8;
