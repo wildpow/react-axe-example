@@ -1,4 +1,4 @@
-const data = [
+const data = 
   {
     description:
       "Whatever you do in bed, Sealy supports it. Proudly built in America for over 130 years, Sealy designs high-quality mattresses that are built to last. Posturepedic technology targeting the heaviest points in your body and delivering advanced support there so your body stays level while you sleep.",
@@ -6,12 +6,12 @@ const data = [
     headingImg: {
       alt: "Sealy a proud supporter of you",
       title: "Sealy Logo",
-      url: "./images/sealyheadingimage.png",
+      name: "sealyheadingimage",
     },
     heroImg: {
       alt: "Sealy mattress in a bedroom",
       title: "Sealy Mattress",
-      url: "./images/sealyheroimage.jpg",
+      name: "sealyheroimage",
     },
     tabBox: [
       {
@@ -23,7 +23,7 @@ const data = [
           alt: "Sealy Collections",
           height: 126,
           title: "Sealy Collections",
-          url: "./images/sealycollectionstopimage.png",
+          name: "sealycollectionstopimage",
           width: 458,
         },
         box: [
@@ -34,7 +34,7 @@ const data = [
             picture: {
               alt: "Sealy Response mattress",
               title: "Sealy Response",
-              url: "./images/sealycollectionresponse.jpg",
+              name: "sealycollectionresponse",
             },
           },
           {
@@ -44,7 +44,7 @@ const data = [
             picture: {
               alt: "Sealy Hybrid mattress",
               title: "Sealy Hybrid",
-              url: "./images/sealycollectionhybrid.jpg",
+              name: "sealycollectionhybrid",
             },
           },
           {
@@ -54,7 +54,7 @@ const data = [
             picture: {
               alt: "Sealy Golden Elegance Mattress",
               title: "Sealy Golden Elegance",
-              url: "./images/sealycollectiongoldenelegance.jpg",
+              name: "sealycollectiongoldenelegance",
             },
           },
         ],
@@ -69,7 +69,7 @@ const data = [
           alt: "Sealy foundations",
           height: 126,
           title: "Sealy foundations",
-          url: "./images/sealyfoundationstopimage.png",
+          name: "sealyfoundationstopimage",
           width: 458,
         },
         box: [
@@ -80,7 +80,7 @@ const data = [
             picture: {
               alt: "Sealy Ease adjustable base",
               title: "Sealy Ease adjustable base",
-              url: "./images/sealyfoundationease.jpg",
+              name: "sealyfoundationease",
             },
           },
           {
@@ -90,7 +90,7 @@ const data = [
             picture: {
               alt: "Rize Clarity II power base",
               title: "Rize Clarity II power base",
-              url: "./images/sealyfoundationclarityii.jpg",
+              name: "sealyfoundationclarityii",
             },
           },
           {
@@ -100,7 +100,7 @@ const data = [
             picture: {
               alt: "Tempur-Ergo power base",
               title: "Tempur-Ergo",
-              url: "./images/sealyfoundationergo.jpg",
+              name: "sealyfoundationergo",
             },
           },
           {
@@ -110,7 +110,7 @@ const data = [
             picture: {
               alt: "Sealy Flat Foundation",
               title: "Flat Foundation",
-              url: "./images/sealyfoundationflat.jpg",
+              name: "sealyfoundationflat",
             },
           },
         ],
@@ -125,7 +125,7 @@ const data = [
           alt: "Top it all off",
           height: 126,
           title: "Sealy top it all off",
-          url: "./images/sealytopitofftopimage.png",
+          name: "sealytopitofftopimage",
           width: 458,
         },
         box: [
@@ -136,7 +136,7 @@ const data = [
             picture: {
               alt: "Protect-A-Bed premium cool Tencel mattress protectors",
               title: "Protect-A-Bed premium cool Tencel",
-              url: "./images/sealypab.png",
+              name: "sealypab",
             },
           },
           {
@@ -146,11 +146,13 @@ const data = [
             picture: {
               alt: "DreamFit Sheets",
               title: "DreamFit Sheets",
-              url: "./images/sealydreamfit.jpg",
+              name: "sealydreamfit",
             },
           },
         ],
       },
     ],
-  },
-]
+  };
+
+
+export default data;
